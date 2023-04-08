@@ -14,8 +14,6 @@ namespace Subiect_OTI_judeteana
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new Vizualizare());
-
-
         }
     }
 }

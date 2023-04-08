@@ -20,5 +20,11 @@
     <Compile Update="mockups\MockupVizualizare.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="model\Cerc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="model\PnlHarta.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

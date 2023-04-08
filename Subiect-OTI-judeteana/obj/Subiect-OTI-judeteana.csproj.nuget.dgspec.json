@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj": {}
+    "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana2022\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj": {}
   },
   "projects": {
-    "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj": {
+    "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana2022\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj",
+        "projectUniqueName": "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana2022\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj",
         "projectName": "Subiect-OTI-judeteana",
-        "projectPath": "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj",
+        "projectPath": "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana2022\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana.csproj",
         "packagesPath": "C:\\Users\\Utilizator\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana\\Subiect-OTI-judeteana\\obj\\",
+        "outputPath": "C:\\Data\\programre-vizuala-csharp\\Aplicatii\\Subiect-OTI-judeteana2022\\Subiect-OTI-judeteana\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

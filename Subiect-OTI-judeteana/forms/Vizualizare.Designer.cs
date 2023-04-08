@@ -37,7 +37,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Vizualizare";
             this.Text = "Vizualizare";
-            this.Load += new System.EventHandler(this.Vizualizare_Load);
             this.ResumeLayout(false);
 
         }
