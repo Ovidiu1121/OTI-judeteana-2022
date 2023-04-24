@@ -44,3 +44,4 @@ C:\Data\programre-vizuala-csharp\Aplicatii\Subiect-OTI-judeteana2022\Subiect-OTI
 C:\Data\programre-vizuala-csharp\Aplicatii\Subiect-OTI-judeteana2022\Subiect-OTI-judeteana\obj\Debug\net6.0-windows\ref\Subiect-OTI-judeteana.dll
 C:\Data\programre-vizuala-csharp\Aplicatii\Subiect-OTI-judeteana2022\Subiect-OTI-judeteana\obj\Debug\net6.0-windows\Subiect-OTI-judeteana.pdb
 C:\Data\programre-vizuala-csharp\Aplicatii\Subiect-OTI-judeteana2022\Subiect-OTI-judeteana\obj\Debug\net6.0-windows\Subiect-OTI-judeteana.genruntimeconfig.cache
+C:\Data\programre-vizuala-csharp\Aplicatii\Subiect-OTI-judeteana2022\Subiect-OTI-judeteana\obj\Debug\net6.0-windows\Subiect_OTI_judeteana.MockupTest.resources

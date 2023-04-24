@@ -24,25 +24,26 @@ namespace Subiect_OTI_judeteana.forms
         private TabControl tabcontrol;
         private ControlMasurare controlmasurare=new ControlMasurare();
         private Panel pnlimage;
+        private Panel pnltraseu;
         Graphics g;
         private TabPage tab;
-
+        private TabPage tab2;
         public Vizualizare()    
         {
             InitializeComponent();
 
             this.Size = new System.Drawing.Size(1000, 581);
-            g = this.CreateGraphics();
 
             this.tabcontrol = new TabControl();
             this.Controls.Add(this.tabcontrol);
-            this.tabcontrol.Location = new System.Drawing.Point(100, 100) ;
+            this.tabcontrol.Location = new System.Drawing.Point(0, 0);
             this.tabcontrol.Size = new System.Drawing.Size(984, 539);
-            
+
             TabPage tab = new TabPage("Harta");
 
             this.tab = tab;
             TabPage tab2 = new TabPage("Traseu");
+            this.tab2 = tab2;
             this.tabcontrol.Controls.Add(tab);
             this.tabcontrol.Controls.Add(tab2);
 
@@ -77,9 +78,6 @@ namespace Subiect_OTI_judeteana.forms
             this.date.Size=new Size(250, 27);
             this.date.ValueChanged+=new EventHandler(schimbareHarta_ValueChanged);
 
-            this.pnlimage=new PnlHarta("Bucuresti", this.date.Value);
-            tab.Controls.Add(pnlimage);
-
             this.lblfiltru=new Label();
             tab.Controls.Add(this.lblfiltru);
             this.lblfiltru.Location=new Point(29, 290);
@@ -107,7 +105,20 @@ namespace Subiect_OTI_judeteana.forms
             this.btnresetare.Location = new Point(53, 417);
             this.btnresetare.Size=new Size(199, 39);
             this.btnresetare.Text="Reseteaza filtru";
-           
+            this.btnresetare.Click+=new EventHandler(resetare_Click);
+
+            //if (this.cmbharta.Text.Equals("Selecteaza un text"))
+            //{
+            //    string path = Application.StartupPath+@"\data\Harti\default_harta.png";
+
+            //    this.pnltraseu=new PnlHarta(path, this.date.Value);
+            //    tab2.Controls.Add(this.pnltraseu);
+            //}
+            //else
+            //{
+            //    this.pnltraseu=new PnlHarta(this.cmbharta.Text, this.date.Value);
+            //    tab2.Controls.Add(this.pnltraseu);
+            //}
 
         }
 
@@ -115,30 +126,87 @@ namespace Subiect_OTI_judeteana.forms
         {
             if(this.cmbharta.Text.Equals("Selecteaza un text")==false)
             {
-                this.pnlimage.BackgroundImage=Image.FromFile(Application.StartupPath+@"\data\harti\"+this.cmbharta.Text+".png");
+                if (this.pnlimage!=null)
+                {
+                    foreach(Control ct in this.tab.Controls)
+                    {
 
+                        if (ct.Name.Equals("harta")){
+                            this.tab.Controls.Remove(ct);
+                        }
+                    }
+                }
                 this.pnlimage=new PnlHarta(this.cmbharta.Text, this.date.Value);
-
-               
-                tab.Controls.Add(pnlimage);
+                this.tab.Controls.Add(pnlimage);
 
             }
-            this.pnlimage.SendToBack();
 
-
-            foreach(var x in  this.Controls)
+            if (this.pnltraseu!=null)
             {
-                (x as Control).SendToBack();
+                foreach (Control ct in this.tab2.Controls)
+                {
+                    if (ct.Name.Equals("harta"))
+                    {
+                        this.tab2.Controls.Remove(ct);
+                    }
+                }
             }
 
+            this.pnltraseu=new PnlHarta(this.cmbharta.Text, this.date.Value);
+            this.pnltraseu.Location=new Point(166, 2);
+            this.tab2.Controls.Add(this.pnltraseu);
         }
 
         public void filtrare_Click(object sender, EventArgs e)
         {
-            Cerc a = new Cerc(200, 500, Color.Green);
-            a.Paint(g);
+            g=this.pnlimage.CreateGraphics();
+
+            if(this.cmbfiltru.Text.Equals("Niciun filtru"))
+            {
+                MessageBox.Show("Selectati un filtru");
+            }
+            else if(this.cmbfiltru.Text.Equals("Valoarea < 20"))
+            {
+                foreach(Control ct in this.pnlimage.Controls)
+                {
+                    if(ct.Name.Equals("sub 20"))
+                    {
+                        this.pnlimage.Controls.Remove(ct);
+                        g.Clear(Color.Red);
+                    }
+                }
+                this.pnlimage.Invalidate();
+                this.pnlimage.Update();
+            }
+            else if(this.cmbfiltru.Text.Equals("20 <= Valoarea <= 40"))
+            {
+                foreach (Control ct in this.pnlimage.Controls)
+                {
+                    if (ct.Name.Equals("intre 20 si 40"))
+                    {
+                        this.pnlimage.Controls.Remove(ct);
+                    }
+                }
+            }
+            else if(this.cmbfiltru.Text.Equals("Valoarea > 40"))
+            {
+                foreach (Control ct in this.pnlimage.Controls)
+                {
+                    if (ct.Name.Equals("peste 40"))
+                    {
+                        this.pnlimage.Controls.Remove(ct);
+                    }
+                }
+            }
 
         }
+
+        public void resetare_Click(object sender, EventArgs e)
+        {
+            this.cmbfiltru.Text="Niciun filtru";
+
+        }
+
 
 
         

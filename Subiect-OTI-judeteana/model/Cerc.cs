@@ -9,6 +9,7 @@ namespace Subiect_OTI_judeteana
 {
     public class Cerc:Panel
     {
+ 
         private int x;
         private int y;  
         private Color culoare;
@@ -18,6 +19,7 @@ namespace Subiect_OTI_judeteana
             this.x = x; 
             this.y = y;
             this.culoare = culoare;
+            this.Size = new Size(1, 1);
         }
 
         public int X
@@ -37,7 +39,7 @@ namespace Subiect_OTI_judeteana
 
             SolidBrush yBrush=new SolidBrush(this.culoare);
 
-            g.FillEllipse(yBrush, this.x, this.y, 50, 50);
+            g.FillEllipse(yBrush, this.x, this.y, 30, 30);
 
 
         }
